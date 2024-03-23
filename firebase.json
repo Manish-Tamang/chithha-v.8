@@ -1,0 +1,40 @@
+{
+    "firestore": {
+      "rules": "firestore.rules"
+    },
+    "functions": {
+      "source": "functions",
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    },
+    "hosting": {
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/app/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "/images/**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000"
+            }
+          ]
+        }
+      ]
+    },
+    "storage": {
+      "rules": "storage.rules"
+    }
+  }
+  
