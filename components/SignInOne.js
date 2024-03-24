@@ -253,7 +253,7 @@ const SignInOne = () => {
         <div className="mt-6 h-400 w-100 flex items-center justify-center">
           <img
             className="mx-auto h-900 w-100 rounded-md object-cover"
-            src="/images/1.jpg"
+            src="/images/1.png"
             alt=""
           />
         </div>
